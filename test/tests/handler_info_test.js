@@ -1,8 +1,7 @@
 import { module } from "tests/test_helpers";
 import Router from "router";
 import { HandlerInfo, ResolvedHandlerInfo, UnresolvedHandlerInfoByObject, UnresolvedHandlerInfoByParam } from 'router/handler-info';
-import { Backburner } from "backburner";
-import { resolve, configure, reject, Promise } from "rsvp";
+import { resolve, reject, Promise } from "rsvp";
 
 function noop() {}
 
