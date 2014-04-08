@@ -214,7 +214,16 @@ exports.getChangelist = getChangelist;function promiseLabel(label) {
   return 'Router: ' + label;
 }
 
-exports.promiseLabel = promiseLabel;exports.merge = merge;
+exports.promiseLabel = promiseLabel;function subclass(parentConstructor, proto) {
+  function C(props) {
+    parentConstructor.call(this, props);
+  }
+  C.prototype = oCreate(parentConstructor.prototype);
+  merge(C.prototype, proto);
+  return C;
+}
+
+exports.subclass = subclass;exports.merge = merge;
 exports.slice = slice;
 exports.isParam = isParam;
 exports.coerceQueryParamsToString = coerceQueryParamsToString;
